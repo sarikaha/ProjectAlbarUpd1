@@ -1,0 +1,67 @@
+﻿
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="../JS/LogIn.js"></script>
+    <link href="../CSS/Product.css" rel="stylesheet" />
+    <script src="../JS/Products.js"></script>
+    <title>Welcome to the FreshFood🍓</title>
+    <meta charset="utf-8" />
+
+    <template id="temp-category">
+        <div class="cb checkbox">
+            <input type="checkbox" class="opt" id="" value="">
+            <label class="lbl" for="">
+                <div class="OptionName"></div>
+                <div class="Count"></div>
+            </label>
+        </div>
+    </template>
+
+</head>
+<body onload="">
+    <header>
+        <h1>  ברוכים הבאים FreshFood🍓</h1>
+    </header>
+    <div id="hiddenContainer">
+        <div class="helper">
+            <label for="sli_search_1">חיפוש לפי שם מוצר קטגוריה ומחיר:</label>
+        </div>
+        <!-- ! מכאן אני שיניתי  -->
+        <!-- <input type="text" name="w" value="" id="sli_search_1" class="SearchBox" oninvalid="this.setCustomValidity('\u05d0\u05e0\u05d0 \u05de\u05dc\u05d0\u05d5 \u05d0\u05ea \u05e9\u05d3\u05d4 \u05d6\u05d4')" oninput="this.setCustomValidity('')" title="אנא מלאו את שדה זה" placeholder="חיפוש מוצר או מותג" required="required" spellcheck="false" autocomplete="off"> -->
+        <input id="search-field" class="SearchBox" type="text" placeholder="Enter">
+        <input type="submit" value="חיפוש פריטים" class="SearchButton" onclick="searchProduct()">
+        <!--            <button><a style="color:black; text-decoration: none" href="../HTML/NewProduct.html">הכנס מוצר חדש</a></button>
+    -->
+        <button onclick="addProductClick(event)">הוספת מוצר</button>
+        <ul id="products-list">
+
+        <input type="hidden" name="isort" value="bst">
+        <input type="hidden" id="search-af" name="af">
+
+
+        
+
+          <button class="Clear" onclick="clearAllClick()">נקה הכל</button>
+        
+    </div>
+
+    
+    <div id="addProductContainer" style="display: none">
+        <form onsubmit="createP(event)">
+             <h1>enter new product</h1>
+            <label>productName</label>
+            <input type="text" id="productName" required ><br />
+            <label>ProductCategory</label>
+            <input type="text" id="productCategory" required ><br />
+            <label>Price</label>
+            <input type="number" id="price" required ><br />
+            <label>UnitStoke</label>
+            <input type="number" id="unitStoke" required ><br />
+            <button type="submit">save</button>
+        </form>
+    </div>
+</body>
+</html>
